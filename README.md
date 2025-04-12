@@ -1,80 +1,66 @@
 # Taylor-Series-Visualizer
+# Convergence of Taylor Series and Its Limitations
 
-## Overview
-
-The Taylor series is a powerful mathematical tool used to approximate complex functions using polynomials. While this method works well in many scenarios, understanding **where** and **how** it converges to the original function is crucial for accurate approximations.
-
----
-
-## What is a Taylor Series?
-
-A Taylor series represents a function as an infinite sum of terms calculated from the derivatives of the function at a single point.
-
-For a function \( f(x) \), the Taylor series about a point \( a \) is:
-
-\[
-f(x) = \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!}(x - a)^k
-\]
+## Introduction
+The Taylor Series is a powerful tool in mathematics that allows us to approximate functions using polynomials. By expanding a function into an infinite sum of its derivatives at a single point, we can often model complex behavior with simpler expressions. However, the effectiveness of a Taylor Series depends heavily on its **convergence** properties.
 
 ---
 
-## When Does It Work?
+## What is Convergence?
+A Taylor Series converges to a function \( f(x) \) at a point \( x \) if the sum of its terms approaches \( f(x) \) as the number of terms goes to infinity:
 
-### Convergence
+\[ f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x - a)^n \]
 
-A Taylor series **converges** to a function at a point \( x \) if the infinite sum of its terms equals the actual value of the function at \( x \).
-
-- For example: \( e^x \), \( \sin(x) \), and \( \cos(x) \) converge for all real numbers.
-- These functions are called **entire functions**.
+The interval around \( a \) within which the series converges is known as the **interval of convergence**, and the length from \( a \) to either endpoint is the **radius of convergence**.
 
 ---
 
-## Limitations
+## Examples of Convergent Taylor Series
+### 1. Exponential Function \( e^x \)
+- **Function**: \( f(x) = e^x \)
+- **Expansion at** \( a = 0 \):
+  \[ e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} \]
+- **Radius of Convergence**: \( \infty \) — converges everywhere.
 
-### Radius of Convergence
-
-The Taylor series of many functions only converges within a certain interval around the expansion point \( a \). This interval is called the **radius of convergence**.
-
-### Common Issues
-
-- **Divergence**: The Taylor series may diverge outside the radius of convergence.
-- **Mismatch**: Even if the series converges, it might not converge to the original function (e.g., functions with discontinuities or sharp corners).
-- **Non-analytic functions**: Some functions don’t equal their Taylor series at any point.
-
-### Example: \( \frac{1}{1 - x} \)
-
-\[
-\sum_{k=0}^{\infty} x^k = 1 + x + x^2 + x^3 + \dots
-\]
-
-- Valid only for \( |x| < 1 \)
-- Diverges for \( |x| \geq 1 \)
+### 2. Sine and Cosine
+- \( \sin(x) = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!} \)
+- \( \cos(x) = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!} \)
+- Both converge for all \( x \).
 
 ---
 
-## Visualization Idea
+## Limited Convergence
+### 1. Geometric Series \( \frac{1}{1 - x} \)
+- **Expansion at** \( a = 0 \):
+  \[ \frac{1}{1 - x} = \sum_{n=0}^{\infty} x^n \]
+- **Radius of Convergence**: \( 1 \)
+- **Valid only for** \( |x| < 1 \)
 
-Use a symbolic visualizer (like a MATLAB script) to:
-
-1. Input a function, expansion point \( a \), and number of terms \( n \)
-2. Display the original function and its Taylor approximation
-3. Observe how the approximation improves near \( a \) and worsens away from it
+### 2. Natural Logarithm \( \ln(1 + x) \)
+- \( \ln(1 + x) = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{x^n}{n} \)
+- **Radius of Convergence**: \( 1 \)
+- **Valid only for** \( -1 < x \leq 1 \)
 
 ---
 
-## Try These Examples
+## When Taylor Series Fail
+A Taylor Series might not approximate a function well if:
+- The function is not infinitely differentiable at the point of expansion.
+- The function is differentiable but not analytic (e.g., \( e^{-1/x^2} \) at \( x = 0 \)).
+- The point lies outside the radius of convergence.
 
-| Function | Expansion Point \( a \) | Notes |
-|---------|-------------------------|-------|
-| \( e^x \) | 0 | Converges everywhere |
-| \( \sin(x) \) | 0 | Converges everywhere |
-| \( \ln(x) \) | 1 | Only valid for \( 0 < x < 2 \) |
-| \( \frac{1}{1 - x} \) | 0 | Converges for \( |x| < 1 \) |
+---
+
+## Visualization Tip
+Use your Taylor Series visualizer script to:
+- Plot both the original function and its Taylor polynomial.
+- Observe the convergence behavior within and outside the interval.
+- Experiment with different functions and expansion points.
 
 ---
 
 ## Conclusion
-
-The Taylor series is a powerful approximation tool, but it comes with **important limitations** regarding **convergence** and **accuracy**. Always analyze the radius of convergence before trusting a Taylor approximation.
+Taylor Series are incredibly useful but must be used with an understanding of their convergence behavior. Knowing the limitations ensures accurate modeling and prevents misinterpretation of polynomial approximations.
 
 ---
+
