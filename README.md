@@ -34,13 +34,13 @@ $$
 \frac{1}{1 - x} = \sum_{n=0}^{\infty} x^n
 $$
 
-is valid only for \( |x| < 1 \). Outside this interval, the series diverges.
+is valid only for ( |x| < 1 ). Outside this interval, the series diverges.
 
 ---
 
 ## Why Does Convergence Matter?
 
-If the Taylor Series does not converge at a point \( x \), then the series does **not** represent the function at that point. Even when the series converges, it may not converge **to** the function unless certain conditions (like analyticity) are met.
+If the Taylor Series does not converge at a point x, then the series does **not** represent the function at that point. Even when the series converges, it may not converge **to** the function unless certain conditions (like analyticity) are met.
 
 ---
 
@@ -50,10 +50,10 @@ You can use the following sample functions in the Taylor Series visualizer to ob
 
 | Function          | Expansion Point | Expected Behavior                    |
 |-------------------|-----------------|--------------------------------------|
-| \( e^x \)         | 0               | Converges everywhere                 |
-| \( \sin(x) \)     | 0               | Converges everywhere                 |
-| \( \ln(1 + x) \)  | 0               | Converges for \( -1 < x \le 1 \)     |
-| \( \frac{1}{1-x} \) | 0             | Converges for \( |x| < 1 \)          |
+|$$ \( e^x \) $$        | 0               | Converges everywhere                 |
+|$$ \( \sin(x) \) $$    | 0               | Converges everywhere                 |
+|$$ \( \ln(1 + x) \) $$ | 0               | Converges for -1 < x < 1     |
+|$$ \( \frac{1}{1-x} \) $$| 0             | Converges for |x| < 1           |
 
 ---
 
